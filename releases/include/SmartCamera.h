@@ -1,8 +1,9 @@
 #pragma once
 
+#include "base/ArrayList.h"
+
 #include "Camera.h"
 #include "CameraProvider.h"
-#include "base/ArrayList.h"
 
 
 class SmartCamera
@@ -19,4 +20,12 @@ public:
 };
 
 
+#ifdef _WINDOWS
+
+SmartCamera* __stdcall SmartCamera_getInstance();
+
+#else
+
 SmartCamera* SmartCamera_getInstance();
+
+#endif // _WINDOWS

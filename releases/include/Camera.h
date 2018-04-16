@@ -1,8 +1,8 @@
 #pragma once
 
-#include "CameraConfig.h"
-
 #include "base/Object.h"
+
+#include "CameraConfig.h"
 
 
 class CameraSource
