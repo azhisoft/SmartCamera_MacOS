@@ -24,27 +24,32 @@ providers->destroy();
 
 virtual void cameraDiscoverAbort(CameraProviderSource* source)
 {
-    ATLTRACE("ABORT: %s\r\n", source->getName());
+    std::cout << "ABORT: " << source->getName() << "\n";
 }
 
 virtual void cameraDiscoverTimeout(CameraProviderSource* source)
 {
-    ATLTRACE("TIMEOUT: %s\r\n", source->getName());
+    std::cout << "TIMEOUT: " << source->getName() << "\n";
 }
 
 virtual void cameraDiscovered(CameraSource* source)
 {
-    ATLTRACE(TEXT("FOUND: %s\n"), source->getUrl());
+    std::cout << "FOUND: " << source->getUrl() << "\n";
     
     SmartCamera*	g = SmartCamera_getInstance();
     Camera*		camera = g->connect(source->getUrl());
     
     if(camera)
     {
-        NETWORK_CONFIG*	network = camera->getNetwork();
+        const NETWORK_CONFIG*	network = camera->getNetwork();
 
         if(network)
-            ATLTRACE(TEXT("DHCP: %s, IP: %s, MASK: %s, GATEWAY: %s, DNS1: %s, DNS2: %s\n"), network->dhcp ? "YES" : "NO", network->ip, network->mask, network->gateway, network->dns1, network->dns2);
+            std::cout << "DHCP: " << (network->dhcp ? "YES" : "NO") << ", "
+                    << "IP: " << network->ip << ", "
+                    << "MASK: " << network->mask << ", "
+                    << "GATEWAY: " << network->gateway << ", "
+                    << "DNS1: " << network->dns1 << ", "
+                    << "DNS2: " << network->dns2 << "\n";
 
         ....
     }

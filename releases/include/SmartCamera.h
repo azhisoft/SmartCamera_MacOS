@@ -28,4 +28,4 @@ SmartCamera* __stdcall SmartCamera_getInstance();
 
 SmartCamera* SmartCamera_getInstance();
 
-#endif // _WINDOWS
+#endif
