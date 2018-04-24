@@ -20,6 +20,9 @@ public:
 	virtual const char* getName() = 0;
 	virtual bool setName(const char* name) = 0;
 
+	virtual const OVERLAY_CONFIG* getOverlay() = 0;
+	virtual bool setOverlay(const OVERLAY_CONFIG* config) = 0;
+
 	virtual const NETWORK_CONFIG* getNetwork() = 0;
 	virtual bool setNetwork(const NETWORK_CONFIG* config) = 0;
 

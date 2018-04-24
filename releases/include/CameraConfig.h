@@ -1,6 +1,11 @@
 #pragma once
 
 
+typedef struct _tagOverlayConfig {
+	bool	time, name;
+} OVERLAY_CONFIG;
+
+
 typedef struct _tagNetworkConfig {
 	bool	dhcp;
 	char	ip[16], mask[16], gateway[16];
